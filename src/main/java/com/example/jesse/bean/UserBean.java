@@ -10,84 +10,80 @@ import com.google.gson.annotations.SerializedName;
  */
 public class UserBean {
 
-    /**
-     * code : 123
-     * msg : success
-     * data : {"number":1,"name":"zsh","class":3,"grade":3}
-     */
+    private int id;
+    private String name;
+    private int sex;//1男 2女
+    private int age;
+    private String birthday;
+    private String mobile;
+    private String address;
 
-    private int code;
-    private String msg;
-    private DataBean data;
-
-    public int getCode() {
-        return code;
+    public int getId() {
+        return id;
     }
 
-    public void setCode(int code) {
-        this.code = code;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getMsg() {
-        return msg;
+    public String getName() {
+        return name;
     }
 
-    public void setMsg(String msg) {
-        this.msg = msg;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public DataBean getData() {
-        return data;
+    public int getSex() {
+        return sex;
     }
 
-    public void setData(DataBean data) {
-        this.data = data;
+    public void setSex(int sex) {
+        this.sex = sex;
     }
 
-    public static class DataBean {
-        /**
-         * number : 1
-         * name : zsh
-         * class : 3
-         * grade : 3
-         */
+    public int getAge() {
+        return age;
+    }
 
-        private int number;
-        private String name;
-        @SerializedName("class")
-        private int classX;
-        private int grade;
+    public void setAge(int age) {
+        this.age = age;
+    }
 
-        public int getNumber() {
-            return number;
-        }
+    public String getBirthday() {
+        return birthday;
+    }
 
-        public void setNumber(int number) {
-            this.number = number;
-        }
+    public void setBirthday(String birthday) {
+        this.birthday = birthday;
+    }
 
-        public String getName() {
-            return name;
-        }
+    public String getMobile() {
+        return mobile;
+    }
 
-        public void setName(String name) {
-            this.name = name;
-        }
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
+    }
 
-        public int getClassX() {
-            return classX;
-        }
+    public String getAddress() {
+        return address;
+    }
 
-        public void setClassX(int classX) {
-            this.classX = classX;
-        }
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
-        public int getGrade() {
-            return grade;
-        }
-
-        public void setGrade(int grade) {
-            this.grade = grade;
-        }
+    @Override
+    public String toString() {
+        return "UserBean{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", sex=" + sex +
+                ", age=" + age +
+                ", birthday='" + birthday + '\'' +
+                ", mobile='" + mobile + '\'' +
+                ", address='" + address + '\'' +
+                '}';
     }
 }
