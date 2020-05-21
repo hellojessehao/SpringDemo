@@ -3,13 +3,11 @@ package com.example.jesse.controller;
 import com.example.jesse.base.Constant;
 import com.example.jesse.bean.ListObject;
 import com.example.jesse.bean.UserBean;
-import com.example.jesse.service.UserService;
-import com.example.jesse.service.impl.UserServiceImpl;
+import com.example.jesse.service.dao.UserDao;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -30,6 +28,9 @@ public class TestController {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
+    @Autowired
+    UserDao userDao;
+
     @RequestMapping("/getData")
     @ResponseBody
     public String getData(){
@@ -42,7 +43,7 @@ public class TestController {
         ListObject listObject = new ListObject();
         listObject.setCode(Constant.CODE_SUCCESS);
         listObject.setMsg(Constant.MSG_SUCCESS);
-        List<UserBean> userBeanList = jdbcTemplate.query("SELECT * FROM user", new UserRowMapper());
+        List<UserBean> userBeanList = userDao.getAllUser();
         listObject.setItems(userBeanList);
         return listObject;
     }
