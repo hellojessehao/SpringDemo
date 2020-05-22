@@ -11,13 +11,21 @@ public class StatusObject {
  
 	// 状态信息
 	private String msg;
- 
+
+	public StatusObject() {
+	}
+
 	public StatusObject(String code, String msg) {
 		super();
 		this.code = code;
 		this.msg = msg;
 	}
- 
+
+	public void setSuccess(){
+		this.code = Constant.CODE_SUCCESS;
+		this.msg = Constant.MSG_SUCCESS;
+	}
+
 	public String getCode() {
 		return code;
 	}

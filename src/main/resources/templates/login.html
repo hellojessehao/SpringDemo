@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>login or register</title>
+</head>
+<body style="width:100%;height:100%;display: flex;flex-direction: column;align-items: center;">
+<div style="margin-top: 18%">
+    <h1>登录或者注册</h1>
+    <form th:action="@{/user/login}" method="post">
+        <p>账 号：<input name="account" type="text" placeholder="请输入账号"></p>
+        <p>密 码：<input name="password" type="password" placeholder="请输入密码"></p>
+        <div>
+            <button type="submit">提交</button>
+            <a href="toRegister" style="margin-left: 20px">还没有账号？点击注册</a>
+        </div>
+    </form>
+</div>
+</body>
+</html>
